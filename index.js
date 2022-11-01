@@ -6,15 +6,16 @@ const port = process.env.PORT || 5000;
 const userRoutes = require('./routes/v1/user.route')
 
 //routes
-app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/users', userRoutes) //  user route 
 
-
-
+/*
+ add your routes here
+*/
 
 
 //no route found
 app.all("*", (req, res) => {
-    res.status(404).send({ success: "false", message: "No route found" });
+    res.status(404).send({ success: "false", message: "No API end point found" });
 });
 
 app.listen(port, () => {
